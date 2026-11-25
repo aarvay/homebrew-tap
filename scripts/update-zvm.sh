@@ -16,7 +16,7 @@ gh attestation verify "$tmp/SHA256SUMS" --repo "$repo" \
 expected=$(awk '$2 == "zvm-source.tar.gz" { print $1 }' "$tmp/SHA256SUMS")
 actual=$(shasum -a 256 < "$tmp/zvm-source.tar.gz")
 [[ $expected =~ ^[a-f0-9]{64}$ && $expected == "${actual%% *}" ]] || { echo 'Archive checksum mismatch' >&2; exit 1; }
-sed -e "s/@TAG@/$tag/g" -e "s/@VERSION@/${tag#v}/g" -e "s/@SHA256@/$expected/g" "$root/templates/zvm.rb.in" > "$tmp/zvm.rb"
+sed -e "s/@TAG@/$tag/g" -e "s/@SHA256@/$expected/g" "$root/templates/zvm.rb.in" > "$tmp/zvm.rb"
 mkdir -p "$root/Formula"
 cp "$tmp/zvm.rb" "$root/Formula/zvm.rb"
 printf 'Generated Formula/zvm.rb for %s. Review it and submit it to the tap.\n' "$tag"
