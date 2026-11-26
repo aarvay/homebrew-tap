@@ -5,6 +5,11 @@ class Zvm < Formula
   sha256 "60f4ef489160d7fd83937ab42b2445c63ada41194eff1fa371a9754694103998"
   license "MIT"
 
+  bottle do
+    root_url "https://github.com/aarvay/homebrew-tap/releases/download/zvm-1.0.1"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "ae35a6f63f27d7240cedddb33e0f94c41461d07edf967cb5f2324373f37f383d"
+  end
+
   depends_on "flock"
   depends_on "jq"
   depends_on :macos
