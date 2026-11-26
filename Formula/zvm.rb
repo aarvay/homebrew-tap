@@ -1,14 +1,9 @@
 class Zvm < Formula
   desc "Install and switch between Zig toolchains and matching language servers"
   homepage "https://github.com/aarvay/zvm"
-  url "https://github.com/aarvay/zvm/releases/download/v1.0.0/zvm-source.tar.gz"
-  sha256 "b667fb5d337a5cee3b10d936431b1fe43d3451dce4c920bf414a6fa3cd7cdcbe"
+  url "https://github.com/aarvay/zvm/releases/download/v1.0.1/zvm-source.tar.gz"
+  sha256 "60f4ef489160d7fd83937ab42b2445c63ada41194eff1fa371a9754694103998"
   license "MIT"
-
-  bottle do
-    root_url "https://github.com/aarvay/homebrew-tap/releases/download/zvm-1.0.0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "fa21ef248aa349280a9796ef7def303c0a2129990b8a63829073790939fecc8a"
-  end
 
   depends_on "flock"
   depends_on "jq"
